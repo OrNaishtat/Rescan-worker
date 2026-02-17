@@ -1,0 +1,36 @@
+{
+  "name": "rescan-worker",
+  "description": "BEFORE_DOWNLOAD worker - triggers Xray scan for unscanned artifacts before download",
+  "version": "1.0.0",
+  "scripts": {
+    "deploy": "jf worker deploy",
+    "undeploy": "jf worker rm \"rescan-worker\"",
+    "test": "jest"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "jfrog-workers": "^0.8.0",
+    "@golevelup/ts-jest": "^0.4.0",
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "jest-jasmine2": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.0.0"
+  },
+  "jest": {
+    "moduleFileExtensions": ["ts", "js"],
+    "rootDir": ".",
+    "testEnvironment": "node",
+    "clearMocks": true,
+    "maxConcurrency": 1,
+    "testRegex": "\\.spec\\.ts$",
+    "moduleDirectories": ["node_modules"],
+    "collectCoverageFrom": ["**/*.ts"],
+    "coverageDirectory": "./coverage",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "testRunner": "jest-jasmine2",
+    "verbose": true
+  }
+}

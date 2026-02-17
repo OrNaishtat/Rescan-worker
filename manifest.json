@@ -1,0 +1,14 @@
+{
+  "name": "rescan-worker",
+  "description": "BEFORE_DOWNLOAD worker for customers using Xray retention period with 'block unscanned' policy. When an artifact is not scanned (e.g. dropped from Xray due to retention), checks scan status, triggers Force Reindex for the specific artifact only (not whole repo), blocks download with message to try again shortly.",
+  "filterCriteria": {
+    "artifactFilterCriteria": {
+      "repoKeys": ["generic-local", "example-repo-local"]
+    }
+  },
+  "secrets": {},
+  "sourceCodePath": "./worker.ts",
+  "action": "BEFORE_DOWNLOAD",
+  "enabled": true,
+  "debug": true
+}
